@@ -142,16 +142,6 @@ public class ClientController extends JFrame implements ActionListener{
         }).start();
     }
 
-    private boolean isServerAvailable(String server, int port) {
-        try (Socket socket = new Socket()) {
-
-            socket.connect(new InetSocketAddress(server, port), 100);
-            return true;
-        } catch (IOException e) {
-            return false;
-        }
-    }
-
     private void enableVote () {
         tname.setEnabled(true);
         tcpf.setEnabled(true);
