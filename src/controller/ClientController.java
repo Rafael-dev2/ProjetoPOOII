@@ -38,7 +38,7 @@ public class ClientController extends JFrame implements ActionListener{
         setBounds(300, 90, 400, 400);
         setResizable(false);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        this.configFile = new File("Config.properties");
+        this.configFile = new File("Client.properties");
         this.candidatesList = new ArrayList<>();
         this.candidatesList.addAll(candidatesList);
      
@@ -110,13 +110,16 @@ public class ClientController extends JFrame implements ActionListener{
             try {
                 String IP = "localhost";
                 int port = 8080;
-                if (configFile.exists()) {
+                if (!configFile.exists()) {
+                    configFile = new File("server.properties");
+                }
+                if(configFile.exists()) {
                     FileInputStream input = new FileInputStream(configFile);
                     Properties config = new Properties();
                     config.load(input);
                     IP = config.getProperty("IP");
                     System.out.println(IP);
-                     port = Integer.parseInt(config.getProperty("PORT"));
+                    port = Integer.parseInt(config.getProperty("PORT"));
                 }
                 socket = new Socket(IP, port);
                 System.out.println(socket.getInetAddress() + " conectado");
