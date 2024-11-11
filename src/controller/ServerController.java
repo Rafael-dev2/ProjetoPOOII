@@ -72,7 +72,7 @@ public class ServerController extends JFrame implements ActionListener {
         this.clientsList = new ArrayList<>();
 
         this.reportFile = new File("Relatorio.txt");
-        this.configFile = new File("Config.conf");
+        this.configFile = new File("Config.properties");
 
         this.allowConnections = true;
 

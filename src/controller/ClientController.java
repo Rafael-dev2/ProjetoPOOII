@@ -39,7 +39,7 @@ public class ClientController extends JFrame implements ActionListener{
         setBounds(300, 90, 400, 400);
         setResizable(false);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        this.configFile = new File("Config.conf");
+        this.configFile = new File("Config.properties");
         this.candidatesList = new ArrayList<>();
         this.candidatesList.addAll(candidatesList);
      
