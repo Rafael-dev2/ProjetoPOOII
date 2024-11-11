@@ -140,7 +140,7 @@ public class ServerController extends JFrame implements ActionListener {
             if(soma % 11 != 11){
                 verificador = soma % 11;
             }
-            if(String.valueOf((user.getCpf()).charAt(10)).equals(String.valueOf(verificador))){
+            if(String.valueOf((user.getCpf()).charAt(9)).equals(String.valueOf(verificador))){
                 soma = 0;
                 verificador = 0;
                 for(i = 0;i <= 9; i++){
@@ -244,7 +244,7 @@ public class ServerController extends JFrame implements ActionListener {
             out.writeObject(error);
             out.flush();
 
-            throw new Exception("ERROR:: user authentication failed...");
+            throw new Exception(" user authentication failed...");
         }
     }
     
